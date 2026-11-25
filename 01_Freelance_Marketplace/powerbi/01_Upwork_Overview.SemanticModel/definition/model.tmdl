@@ -1,0 +1,31 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["Freelancers","Clients","Jobs","Proposals","Contracts","Payments"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Freelancers
+ref table Clients
+ref table Jobs
+ref table Proposals
+ref table Contracts
+ref table Payments
+ref table DateTableTemplate_9f559198-ec74-4bc4-8567-374d3031b50c
+ref table LocalDateTable_aace3dd0-0d37-4888-8b8f-4fb8c9c0a75b
+ref table LocalDateTable_2b804caa-74e4-41ad-81a4-51cfb50b974f
+ref table LocalDateTable_8c2bd172-8ff1-4a74-a600-37d829546e7e
+ref table LocalDateTable_3e23a2eb-c8f3-4836-ad7a-52f0b4250448
+ref table Calendar
+ref table _Measures
+
+ref cultureInfo en-US
+

@@ -1,0 +1,79 @@
+table Proposals
+	lineageTag: b64da213-7d68-4520-9535-e5466859ca2e
+
+	column ProposalID
+		dataType: string
+		lineageTag: 9c9e27a4-121c-45e6-b0fc-065e0c05f5e1
+		summarizeBy: none
+		sourceColumn: ProposalID
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobID
+		dataType: string
+		lineageTag: 44e72da7-2222-4420-816f-532c1da79a2b
+		summarizeBy: none
+		sourceColumn: JobID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FreelancerID
+		dataType: string
+		lineageTag: 513c0986-bae1-4fe1-97d7-1b765ea12d13
+		summarizeBy: none
+		sourceColumn: FreelancerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Proposed Rate'
+		dataType: int64
+		formatString: 0
+		lineageTag: 746afc97-c606-4f1c-a78a-a3f1ba6f494b
+		summarizeBy: sum
+		sourceColumn: Proposed Rate
+
+		annotation SummarizationSetBy = Automatic
+
+	column ResponseTime_Hours
+		dataType: int64
+		formatString: 0
+		lineageTag: 552b4e28-ff86-4f03-b9d2-8dd82b6c8e07
+		summarizeBy: sum
+		sourceColumn: ResponseTime_Hours
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 89ddc952-1058-4538-b7a3-c534a036b97a
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column SubmittedDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 10ecabc1-cb45-41c2-a64f-fb9dea01f05d
+		summarizeBy: none
+		sourceColumn: SubmittedDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Proposals = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("E:\PowerBI\01_Freelance_Marketplace\dataset\Upwork-Marketplace-Dataset.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Proposals", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"ProposalID", type text}, {"JobID", type text}, {"FreelancerID", type text}, {"ProposedRate_USD", Int64.Type}, {"ResponseTime_Hours", Int64.Type}, {"Status", type text}, {"SubmittedDate", type date}}),
+				  #"Removed duplicates" = Table.Distinct(#"Changed column type", {"ProposalID"}),
+				  #"Renamed columns" = Table.RenameColumns(#"Removed duplicates", {{"ProposedRate_USD", "Proposed Rate"}})
+				in
+				  #"Renamed columns"
+
+	annotation PBI_ResultType = Table
+

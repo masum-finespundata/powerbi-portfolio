@@ -1,0 +1,58 @@
+relationship AutoDetected_f6117e12-d703-4a08-9269-f793a7f6c319
+	fromColumn: Proposals.FreelancerID
+	toColumn: Freelancers.FreelancerID
+
+relationship AutoDetected_f9b55f6c-3716-4b4b-b39a-891ab736842c
+	fromColumn: Contracts.FreelancerID
+	toColumn: Freelancers.FreelancerID
+
+relationship AutoDetected_0a727706-2152-4454-bb40-c801589753e4
+	fromColumn: Jobs.ClientID
+	toColumn: Clients.ClientID
+
+relationship AutoDetected_dd7ba129-492c-42a6-babc-8c76ad10d649
+	fromColumn: Proposals.JobID
+	toColumn: Jobs.JobID
+
+relationship AutoDetected_1c819669-dccf-4143-a80a-731a9c325f30
+	fromColumn: Contracts.JobID
+	toColumn: Jobs.JobID
+
+relationship AutoDetected_5287e4f4-844d-4280-a523-5680c9c06492
+	isActive: false
+	fromColumn: Contracts.ProposalID
+	toColumn: Proposals.ProposalID
+
+relationship AutoDetected_e065f530-2b8e-4874-baca-4f9c4058c4de
+	fromColumn: Payments.ContractID
+	toColumn: Contracts.ContractID
+
+relationship 73c17dc5-0661-4d2e-a85c-590a0d72405b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Freelancers.JoinDate
+	toColumn: LocalDateTable_aace3dd0-0d37-4888-8b8f-4fb8c9c0a75b.Date
+
+relationship d4d043b1-e30c-4cec-a55d-cfd316ff95c1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Clients.JoinDate
+	toColumn: LocalDateTable_2b804caa-74e4-41ad-81a4-51cfb50b974f.Date
+
+relationship 2e041455-df7d-4cc0-adbe-21979f366451
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Jobs.PostedDate
+	toColumn: LocalDateTable_8c2bd172-8ff1-4a74-a600-37d829546e7e.Date
+
+relationship 96cdaa18-b101-4b72-816a-9073183df771
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Contracts.StartDate
+	toColumn: LocalDateTable_3e23a2eb-c8f3-4836-ad7a-52f0b4250448.Date
+
+relationship 7211c164-a725-e46c-c0a0-a7e0aa3fcca8
+	fromColumn: Payments.PaymentDate
+	toColumn: Calendar.Date
+
+relationship 015b7b22-318b-eb78-d145-46f30393341e
+	isActive: false
+	fromColumn: Proposals.SubmittedDate
+	toColumn: Calendar.Date
+

@@ -1,0 +1,82 @@
+table Contracts
+	lineageTag: 289d72fd-7d55-46c3-b4a5-1e5f59d378b6
+
+	column ContractID
+		dataType: string
+		lineageTag: e0a4d9ab-89ec-467c-bd6e-4689d2debc55
+		summarizeBy: none
+		sourceColumn: ContractID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProposalID
+		dataType: string
+		lineageTag: 4c31a736-0142-407f-a9c4-ac8803b674ba
+		summarizeBy: none
+		sourceColumn: ProposalID
+
+		annotation SummarizationSetBy = Automatic
+
+	column JobID
+		dataType: string
+		lineageTag: 99e4929c-d3fc-477e-bf3c-59b248ffe031
+		summarizeBy: none
+		sourceColumn: JobID
+
+		annotation SummarizationSetBy = Automatic
+
+	column FreelancerID
+		dataType: string
+		lineageTag: dbe0a04a-dd9f-4138-85e0-5748878da865
+		summarizeBy: none
+		sourceColumn: FreelancerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 519d5bfc-2e0c-413d-9e4e-4ebc6f7c93a4
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: 96cdaa18-b101-4b72-816a-9073183df771
+			defaultHierarchy: LocalDateTable_3e23a2eb-c8f3-4836-ad7a-52f0b4250448.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ContractValue_USD
+		dataType: int64
+		formatString: 0
+		lineageTag: 7654c29e-3a9e-40a5-ad28-cb4a546e3154
+		summarizeBy: sum
+		sourceColumn: ContractValue_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: a20c9c34-febd-4200-81a2-8f54119a407a
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Contracts = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("E:\PowerBI\01_Freelance_Marketplace\dataset\Upwork-Marketplace-Dataset.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Contracts", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"ContractID", type text}, {"ProposalID", type text}, {"JobID", type text}, {"FreelancerID", type text}, {"StartDate", type date}, {"ContractValue_USD", Int64.Type}, {"Status", type text}}),
+				  #"Removed duplicates" = Table.Distinct(#"Changed column type", {"ContractID"})
+				in
+				  #"Removed duplicates"
+
+	annotation PBI_ResultType = Table
+

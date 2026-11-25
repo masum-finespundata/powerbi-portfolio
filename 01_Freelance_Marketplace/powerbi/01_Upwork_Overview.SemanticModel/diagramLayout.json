@@ -1,0 +1,125 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 190.67711231100384,
+        "y": 15.88975935925032
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 50,
+            "y": -50
+          },
+          "nodeIndex": "Clients",
+          "nodeLineageTag": "86a47def-6a9e-4490-be1c-7fe50ae0de56",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 831.232259460896,
+            "y": 105.13010999303106
+          },
+          "nodeIndex": "Contracts",
+          "nodeLineageTag": "289d72fd-7d55-46c3-b4a5-1e5f59d378b6",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 900.97344307296373,
+            "y": 409.80190365501193
+          },
+          "nodeIndex": "Freelancers",
+          "nodeLineageTag": "5cbd96c9-94a2-4ecf-8cc4-a3ae8bfbdc31",
+          "size": {
+            "height": 296,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 447.59299804762895,
+            "y": 0
+          },
+          "nodeIndex": "Jobs",
+          "nodeLineageTag": "3574773d-077b-4847-b85f-d4118c7df025",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 1156.0289182803267,
+            "y": 0
+          },
+          "nodeIndex": "Payments",
+          "nodeLineageTag": "e568b7ce-1300-4ff9-9409-afc089e4c8de",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 495.33830312713684,
+            "y": 547.16052446565152
+          },
+          "nodeIndex": "Proposals",
+          "nodeLineageTag": "b64da213-7d68-4520-9535-e5466859ca2e",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1407.7445282803269,
+            "y": 701.69431623282583
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "21b8cdcd-f04f-4b9d-940d-6691afac62f5",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 1641.7445282803269,
+            "y": 375.84715811641291
+          },
+          "nodeIndex": "_Measures",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 50.346892102823141,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

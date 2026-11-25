@@ -1,0 +1,82 @@
+table Jobs
+	lineageTag: 3574773d-077b-4847-b85f-d4118c7df025
+
+	column JobID
+		dataType: string
+		lineageTag: 7505fede-0fbd-4c5b-a4fa-6b6e14876d63
+		summarizeBy: none
+		sourceColumn: JobID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClientID
+		dataType: string
+		lineageTag: e6f4a511-b2c9-4128-b489-b861d3a26070
+		summarizeBy: none
+		sourceColumn: ClientID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Title
+		dataType: string
+		lineageTag: 7a62cbb1-e784-4df1-b143-f9e6f04349b9
+		summarizeBy: none
+		sourceColumn: Title
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: fd89fd59-c9f8-4506-bee3-938864e38ea0
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Budget_USD
+		dataType: double
+		formatString: 0
+		lineageTag: b742fa7f-9adb-4ebc-b692-600cc90aa090
+		summarizeBy: sum
+		sourceColumn: Budget_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PostedDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0d68665d-4863-41f2-9cc7-119e1403b7ff
+		summarizeBy: none
+		sourceColumn: PostedDate
+
+		variation Variation
+			isDefault
+			relationship: 2e041455-df7d-4cc0-adbe-21979f366451
+			defaultHierarchy: LocalDateTable_8c2bd172-8ff1-4a74-a600-37d829546e7e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Status
+		dataType: string
+		lineageTag: 9def3919-df0c-43c5-af40-054a70da46bf
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Jobs = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("E:\PowerBI\01_Freelance_Marketplace\dataset\Upwork-Marketplace-Dataset.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Jobs", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"JobID", type text}, {"ClientID", type text}, {"Title", type text}, {"Category", type text}, {"Budget_USD", type number}, {"PostedDate", type date}, {"Status", type text}}),
+				  #"Removed duplicates" = Table.Distinct(#"Changed column type", {"JobID"})
+				in
+				  #"Removed duplicates"
+
+	annotation PBI_ResultType = Table
+

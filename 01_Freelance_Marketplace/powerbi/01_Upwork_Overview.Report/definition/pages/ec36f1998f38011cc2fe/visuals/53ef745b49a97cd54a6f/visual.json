@@ -1,0 +1,39 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "53ef745b49a97cd54a6f",
+  "position": {
+    "x": 24,
+    "y": 1010,
+    "z": 3005,
+    "height": 26,
+    "width": 1522,
+    "tabOrder": 3005
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Insight: Win Rate is 34.6% (173 / 500). Total Net Earnings $351K. Earnings trend is declining — investigate low-performing months.",
+                    "textStyle": {
+                      "fontFamily": "optimisticAI, optimisticAI Fallback, Optimistic, system-ui, sans-serif",
+                      "fontStyle": "italic",
+                      "fontSize": "12pt",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

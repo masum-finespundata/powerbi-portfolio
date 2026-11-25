@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "01_Upwork_Overview"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "dab124a9-ad25-41b2-988a-0cca3c0b029a"
+  }
+}

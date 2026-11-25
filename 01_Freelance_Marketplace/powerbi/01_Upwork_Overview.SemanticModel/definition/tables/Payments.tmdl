@@ -1,0 +1,81 @@
+table Payments
+	lineageTag: e568b7ce-1300-4ff9-9409-afc089e4c8de
+
+	column PaymentID
+		dataType: string
+		lineageTag: b3bfb21c-d107-4ba5-8d6b-e4207f35a72f
+		summarizeBy: none
+		sourceColumn: PaymentID
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContractID
+		dataType: string
+		lineageTag: 3a91b777-69d4-44d0-8fe9-687341fa54b5
+		summarizeBy: none
+		sourceColumn: ContractID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: f8e2a5b5-4f73-4584-8594-71d93a5edb98
+		summarizeBy: none
+		sourceColumn: PaymentDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Gross
+		dataType: double
+		formatString: 0
+		lineageTag: 7aeaa7ea-b3b6-46b8-acf9-62b9c5c13117
+		summarizeBy: sum
+		sourceColumn: Gross
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlatformFee_USD
+		dataType: int64
+		formatString: 0
+		lineageTag: bb34199c-0ea8-4ee2-ba14-d14da908f9ad
+		summarizeBy: sum
+		sourceColumn: PlatformFee_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Net Earnings'
+		dataType: double
+		formatString: 0
+		lineageTag: 39a68208-2363-4afe-b386-32caa945ed5d
+		summarizeBy: sum
+		sourceColumn: Net Earnings
+
+		annotation SummarizationSetBy = Automatic
+
+	column PaymentStatus
+		dataType: string
+		lineageTag: ff02c87b-0ced-4e4d-b5b5-95c6253f616a
+		summarizeBy: none
+		sourceColumn: PaymentStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Payments = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("E:\PowerBI\01_Freelance_Marketplace\dataset\Upwork-Marketplace-Dataset.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Payments", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"PaymentID", type text}, {"ContractID", type text}, {"PaymentDate", type date}, {"Gross_USD", type number}, {"PlatformFee_USD", Int64.Type}, {"NetEarnings_USD", type number}, {"PaymentStatus", type text}}),
+				  #"Removed duplicates" = Table.Distinct(#"Changed column type", {"PaymentID"}),
+				  #"Removed duplicates 1" = Table.Distinct(#"Removed duplicates", {"PaymentID"}),
+				  #"Renamed columns" = Table.RenameColumns(#"Removed duplicates 1", {{"Gross_USD", "Gross"}, {"NetEarnings_USD", "Net Earnings"}})
+				in
+				  #"Renamed columns"
+
+	annotation PBI_ResultType = Table
+

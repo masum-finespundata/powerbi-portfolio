@@ -1,0 +1,74 @@
+table Calendar
+	lineageTag: 21b8cdcd-f04f-4b9d-940d-6691afac62f5
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: 6a3e3d64-a422-438d-8607-340f0e0b708a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 8285a38e-f780-4801-be6c-7c248b22faec
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNo
+		formatString: 0
+		lineageTag: d4bd2c6e-506c-46f2-abd0-dcddb2a1eef9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		lineageTag: 2ff71616-938e-45b4-a8b7-45274cf5c3f4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: 8c65a91b-d42a-4d17-84cf-62d2af0d8026
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		lineageTag: d091ccdf-38ef-4c09-a521-5d4395df1cce
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source =
+				
+				VAR MinDate = DATE(2022,1,1)
+				VAR MaxDate = DATE(2025,12,31)
+				RETURN
+				ADDCOLUMNS(
+				    CALENDAR(MinDate, MaxDate),
+				    "Year", YEAR([Date]),
+				    "MonthNo", MONTH([Date]),
+				    "MonthName", FORMAT([Date], "mmm"),
+				    "Quarter", "Q" & FORMAT([Date], "Q"),
+				    "YearMonth", FORMAT([Date], "yyyy-mmm")
+				)
+
+	annotation PBI_Id = db73c15a35f94c9290554a3c38b69286
+

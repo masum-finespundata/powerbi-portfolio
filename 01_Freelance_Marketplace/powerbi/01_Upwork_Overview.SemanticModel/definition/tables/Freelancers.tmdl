@@ -1,0 +1,101 @@
+table Freelancers
+	lineageTag: 5cbd96c9-94a2-4ecf-8cc4-a3ae8bfbdc31
+
+	column FreelancerID
+		dataType: string
+		lineageTag: 105f491f-c4ea-4d54-a104-52e27a182ae3
+		summarizeBy: none
+		sourceColumn: FreelancerID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 0d644de7-cda7-4824-bbbf-aba0e70346d4
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 7cf08a0b-7165-4942-b687-d4efe5974085
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 0bc0a2aa-d037-4d4e-ab54-e1f8c8b3f0f5
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Skills
+		dataType: string
+		lineageTag: 6ae75e21-a576-4afa-85f0-e5e96498bbc9
+		summarizeBy: none
+		sourceColumn: Skills
+
+		annotation SummarizationSetBy = Automatic
+
+	column HourlyRate_USD
+		dataType: int64
+		formatString: 0
+		lineageTag: c751e7b0-f46f-407b-9ca1-6ffd307d3a18
+		summarizeBy: sum
+		sourceColumn: HourlyRate_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rating
+		dataType: double
+		lineageTag: 5497406e-076f-4ac9-818d-de2988d26881
+		summarizeBy: sum
+		sourceColumn: Rating
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TotalJobsDone
+		dataType: int64
+		formatString: 0
+		lineageTag: 0231ba8a-9d61-482e-bdfd-99068998f988
+		summarizeBy: sum
+		sourceColumn: TotalJobsDone
+
+		annotation SummarizationSetBy = Automatic
+
+	column JoinDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 200f1c3c-e320-430e-9542-53be9d881ab2
+		summarizeBy: none
+		sourceColumn: JoinDate
+
+		variation Variation
+			isDefault
+			relationship: 73c17dc5-0661-4d2e-a85c-590a0d72405b
+			defaultHierarchy: LocalDateTable_aace3dd0-0d37-4888-8b8f-4fb8c9c0a75b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition Freelancers = m
+		mode: import
+		source =
+				let
+				  Source = Excel.Workbook(File.Contents("E:\PowerBI\01_Freelance_Marketplace\dataset\Upwork-Marketplace-Dataset.xlsx"), null, true),
+				  #"Navigation 1" = Source{[Item = "Freelancers", Kind = "Sheet"]}[Data],
+				  #"Promoted headers" = Table.PromoteHeaders(#"Navigation 1", [PromoteAllScalars = true]),
+				  #"Changed column type" = Table.TransformColumnTypes(#"Promoted headers", {{"FreelancerID", type text}, {"Name", type text}, {"Country", type text}, {"Category", type text}, {"Skills", type text}, {"HourlyRate_USD", Int64.Type}, {"Rating", type number}, {"TotalJobsDone", Int64.Type}, {"JoinDate", type date}}),
+				  #"Removed duplicates" = Table.Distinct(#"Changed column type", {"FreelancerID"})
+				in
+				  #"Removed duplicates"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,44 @@
+table _Measures
+	lineageTag: 23098712-3ae6-4bb5-ae64-64168458f64b
+
+	measure 'Total Net Earnings' = SUM(Payments[Net Earnings])
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 64388f3d-582d-4682-b9d7-f8de25ae55b4
+
+	measure 'Total Gross' = SUM(Payments[Gross])
+		lineageTag: bb8c78de-f781-4826-aebd-8ec23ef79257
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Jobs' = COUNTROWS(Jobs)
+		formatString: 0
+		lineageTag: cec0017e-3562-409a-8558-c7dd15878aed
+
+	measure 'Total Proposals' = COUNTROWS(Proposals)
+		formatString: 0
+		lineageTag: 7b7113cf-7568-438e-b304-5a8cf5bec7d1
+
+	measure 'Total Contracts' = COUNTROWS(Contracts)
+		formatString: 0
+		lineageTag: 5dc2508d-cb58-40fa-8d2d-46e5dee4e934
+
+	measure 'Win Rate' = DIVIDE([Total Contracts], [Total Proposals])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 6bd9d79b-61c5-4609-8897-5003589ff64a
+
+	column Value
+		isHidden
+		formatString: 0
+		lineageTag: 23dbcf7a-2263-4a8c-bcca-2d0474ac3d43
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _Measures = calculated
+		mode: import
+		source = {1}
+
+	annotation PBI_Id = 1f0d1b1f78944661bf2a9092179283b1
+
