@@ -23,8 +23,19 @@ table _Measures
 		lineageTag: 5dc2508d-cb58-40fa-8d2d-46e5dee4e934
 
 	measure 'Win Rate' = DIVIDE([Total Contracts], [Total Proposals])
-		formatString: 0.0%;-0.0%;0.0%
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 6bd9d79b-61c5-4609-8897-5003589ff64a
+
+	measure 'Avg Deal Size' = DIVIDE([Total Net Earnings], [Total Contracts])
+		formatString: 0
+		lineageTag: 2df74190-3aea-4d32-8ea1-a32a70cfdfb8
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Avg Hourly Rate' = AVERAGE(Freelancers[HourlyRate_USD])
+		lineageTag: fbdebc60-684f-4e28-b3b0-4209c6035bac
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column Value
 		isHidden
