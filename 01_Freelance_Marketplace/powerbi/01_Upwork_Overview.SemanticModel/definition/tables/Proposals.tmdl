@@ -11,17 +11,23 @@ table Proposals
 
 	column JobID
 		dataType: string
+		isHidden
 		lineageTag: 44e72da7-2222-4420-816f-532c1da79a2b
 		summarizeBy: none
 		sourceColumn: JobID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column FreelancerID
 		dataType: string
+		isHidden
 		lineageTag: 513c0986-bae1-4fe1-97d7-1b765ea12d13
 		summarizeBy: none
 		sourceColumn: FreelancerID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

@@ -11,17 +11,23 @@ table Contracts
 
 	column ProposalID
 		dataType: string
+		isHidden
 		lineageTag: 4c31a736-0142-407f-a9c4-ac8803b674ba
 		summarizeBy: none
 		sourceColumn: ProposalID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
 	column JobID
 		dataType: string
+		isHidden
 		lineageTag: 99e4929c-d3fc-477e-bf3c-59b248ffe031
 		summarizeBy: none
 		sourceColumn: JobID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 

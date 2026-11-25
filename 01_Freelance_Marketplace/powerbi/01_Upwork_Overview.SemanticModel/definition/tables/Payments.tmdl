@@ -11,9 +11,12 @@ table Payments
 
 	column ContractID
 		dataType: string
+		isHidden
 		lineageTag: 3a91b777-69d4-44d0-8fe9-687341fa54b5
 		summarizeBy: none
 		sourceColumn: ContractID
+
+		changedProperty = IsHidden
 
 		annotation SummarizationSetBy = Automatic
 
