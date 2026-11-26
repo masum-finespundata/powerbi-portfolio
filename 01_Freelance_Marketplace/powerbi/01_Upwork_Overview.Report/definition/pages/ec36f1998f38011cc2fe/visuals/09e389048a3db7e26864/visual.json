@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "09e389048a3db7e26864",
   "position": {
     "x": 1048,
     "y": 180,
-    "z": 3001,
+    "z": 3000,
     "height": 186.66666666666669,
     "width": 280,
-    "tabOrder": 3001
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -52,23 +52,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "7d9ba7e84babeb2b0b7f",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Win Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
