@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "9ec77eaaadb59599d0bb",
   "position": {
-    "x": 11.428571428571429,
-    "y": 821.42857142857144,
+    "x": 66.291560102301787,
+    "y": 503.32480818414325,
     "z": 4000,
-    "height": 258.57142857142861,
-    "width": 1014.2857142857143,
+    "height": 392.8388746803069,
+    "width": 797.95396419437338,
     "tabOrder": 4000
   },
   "visual": {
@@ -156,108 +156,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8afe8080a8e27b5d33af",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Freelancers"
-              }
-            },
-            "Property": "Name"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0eea079bdbd025d547ca",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Freelancers"
-              }
-            },
-            "Property": "Category"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "a5af7dc5ead750c8c2fa",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Freelancers"
-              }
-            },
-            "Property": "Country"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "1432eabf364b8266b78e",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Freelancers"
-                  }
-                },
-                "Property": "HourlyRate_USD"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "fb126b1a94243e93412e",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Freelancers"
-                  }
-                },
-                "Property": "Rating"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5308b02a8fb5c1b6f530",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Freelancers"
-                  }
-                },
-                "Property": "TotalJobsDone"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

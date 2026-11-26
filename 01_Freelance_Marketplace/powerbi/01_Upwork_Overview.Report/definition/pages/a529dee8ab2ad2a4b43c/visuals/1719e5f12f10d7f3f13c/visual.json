@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "1719e5f12f10d7f3f13c",
   "position": {
-    "x": 11.428571428571429,
-    "y": 421.42857142857144,
+    "x": 1409.309462915601,
+    "y": 22.097186700767264,
     "z": 1000,
-    "height": 370,
-    "width": 630,
+    "height": 329.00255754475705,
+    "width": 439.48849104859335,
     "tabOrder": 1000
   },
   "visual": {
@@ -100,6 +100,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Win Rate by Category'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
                 }
               }
             }

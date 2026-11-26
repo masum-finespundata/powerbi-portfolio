@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "6c71eadf089a07f58fc6",
   "position": {
-    "x": 11.428571428571429,
-    "y": 0,
+    "x": 26.086956521739129,
+    "y": 10.869565217391305,
     "z": 0,
-    "height": 390,
-    "width": 630,
+    "height": 340.21739130434781,
+    "width": 427.17391304347825,
     "tabOrder": 0
   },
   "visual": {
@@ -80,6 +80,13 @@
                   "Value": "'Net Earnings by Category'"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
             }
           }
         }
@@ -99,5 +106,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1924b7e3b95b5647c38e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Freelancers"
+              }
+            },
+            "Property": "Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7379fec4aa4307c269a0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Net Earnings"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

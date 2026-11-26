@@ -1,0 +1,160 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "bbf395f003533b80ac2c",
+  "position": {
+    "x": 300,
+    "y": 698.33333333333337,
+    "z": 5000,
+    "height": 270,
+    "width": 1055,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Executive Summary - Upwork Marketplace",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "14pt",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Total Net Earnings: $351K from 173 contracts.",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "14pt",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Win Rate: 34.6% — about 1 in 3 proposals wins.",
+                    "textStyle": {
+                      "fontFamily": "Times New Roman",
+                      "fontSize": "14pt",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Top Category:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "optimisticAI, optimisticAI Fallback, Optimistic, system-ui, sans-serif",
+                      "fontStyle": "italic",
+                      "fontSize": "16px",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  },
+                  {
+                    "value": " Web Development. ",
+                    "textStyle": {
+                      "fontFamily": "optimisticAI, optimisticAI Fallback, Optimistic, system-ui, sans-serif",
+                      "fontStyle": "italic",
+                      "fontSize": "16px",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Key Insight:",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "optimisticAI, optimisticAI Fallback, Optimistic, system-ui, sans-serif",
+                      "fontStyle": "italic",
+                      "fontSize": "16px",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  },
+                  {
+                    "value": " Earnings trend is declining over time. Top 10 clients drive most earnings. Freelancers who charge more and have high rating get more jobs.",
+                    "textStyle": {
+                      "fontFamily": "optimisticAI, optimisticAI Fallback, Optimistic, system-ui, sans-serif",
+                      "fontStyle": "italic",
+                      "fontSize": "16px",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Recommendation: ",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontFamily": "optimisticAI, optimisticAI Fallback, Optimistic, system-ui, sans-serif",
+                      "fontStyle": "italic",
+                      "fontSize": "16px",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  },
+                  {
+                    "value": "Focus on Top Category, target Top 10 client type, and improve response time to increase Win Rate.",
+                    "textStyle": {
+                      "fontFamily": "optimisticAI, optimisticAI Fallback, Optimistic, system-ui, sans-serif",
+                      "fontStyle": "italic",
+                      "fontSize": "16px",
+                      "color": "rgba(0, 4, 9, 0.59)"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

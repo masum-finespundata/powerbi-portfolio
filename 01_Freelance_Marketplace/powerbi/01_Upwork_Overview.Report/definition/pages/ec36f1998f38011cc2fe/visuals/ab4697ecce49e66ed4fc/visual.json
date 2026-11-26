@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
   "name": "ab4697ecce49e66ed4fc",
   "position": {
-    "x": 174,
-    "y": 54,
+    "x": 79.073359073359072,
+    "y": 17.2972972972973,
     "z": 6000,
-    "height": 78,
-    "width": 492,
+    "height": 113.66795366795367,
+    "width": 585.63706563706569,
     "tabOrder": 6000
   },
   "visual": {
@@ -22,7 +22,7 @@
                     "value": "Upwork Marketplace Overview",
                     "textStyle": {
                       "fontWeight": "bold",
-                      "fontSize": "24pt"
+                      "fontSize": "20pt"
                     }
                   }
                 ]
@@ -30,7 +30,13 @@
               {
                 "textRuns": [
                   {
-                    "value": "Total Earnings, Jobs & Proposals | 2022-2025",
+                    "value": "T",
+                    "textStyle": {
+                      "fontSize": "14pt"
+                    }
+                  },
+                  {
+                    "value": "otal Earnings, Jobs & Proposals | 2022-2025",
                     "textStyle": {
                       "fontSize": "12pt"
                     }

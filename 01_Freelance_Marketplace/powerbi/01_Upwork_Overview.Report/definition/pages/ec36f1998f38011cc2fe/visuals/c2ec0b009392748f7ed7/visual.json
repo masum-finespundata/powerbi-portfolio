@@ -80,6 +80,13 @@
                   "Value": "'Proposals by Category'"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "14D"
+                }
+              }
             }
           }
         }

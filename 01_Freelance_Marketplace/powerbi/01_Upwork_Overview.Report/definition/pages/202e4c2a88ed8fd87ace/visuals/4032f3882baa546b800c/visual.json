@@ -1,0 +1,38 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "4032f3882baa546b800c",
+  "position": {
+    "x": 1330.3937007874017,
+    "y": 35.275590551181104,
+    "z": 2000,
+    "height": 262.04724409448818,
+    "width": 279.68503937007875,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Avg Deal Size"
+                }
+              },
+              "queryRef": "_Measures.Avg Deal Size",
+              "nativeQueryRef": "Avg Deal Size"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
