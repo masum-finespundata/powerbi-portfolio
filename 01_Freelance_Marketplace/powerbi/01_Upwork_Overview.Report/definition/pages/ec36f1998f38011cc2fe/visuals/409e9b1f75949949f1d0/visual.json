@@ -1,0 +1,140 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "409e9b1f75949949f1d0",
+  "position": {
+    "x": 1458,
+    "y": 610,
+    "z": 7005,
+    "height": 150,
+    "width": 406,
+    "tabOrder": 7005
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Calendar"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "Calendar.Year",
+              "nativeQueryRef": "Year"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Total Net Earnings"
+                }
+              },
+              "queryRef": "_Measures.Total Net Earnings",
+              "nativeQueryRef": "Total Net Earnings"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Net YTD"
+                }
+              },
+              "queryRef": "_Measures.Net YTD",
+              "nativeQueryRef": "Net YTD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Net Last Year"
+                }
+              },
+              "queryRef": "_Measures.Net Last Year",
+              "nativeQueryRef": "Net Last Year"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1c7736d03cb4d697e9cc",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Calendar"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "8ac8aa8e3bc401be9a3d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Net Earnings"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bf0e5b9c817062952fd5",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Net YTD"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "46b4f514127d959829ab",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Net Last Year"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

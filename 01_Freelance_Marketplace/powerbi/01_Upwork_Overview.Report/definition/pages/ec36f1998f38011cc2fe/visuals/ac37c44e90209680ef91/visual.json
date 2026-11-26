@@ -1,0 +1,56 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.15.0/schema.json",
+  "name": "ac37c44e90209680ef91",
+  "position": {
+    "x": 1362,
+    "y": 180,
+    "z": 7001,
+    "height": 186,
+    "width": 280,
+    "tabOrder": 7001
+  },
+  "visual": {
+    "visualType": "cardVisual",
+    "query": {
+      "queryState": {
+        "Data": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Net YTD"
+                }
+              },
+              "queryRef": "_Measures.Net YTD",
+              "nativeQueryRef": "Net YTD"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f81f2cac91914542edef",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Net YTD"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

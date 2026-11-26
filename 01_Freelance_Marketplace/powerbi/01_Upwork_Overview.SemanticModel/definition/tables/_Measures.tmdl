@@ -37,6 +37,20 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Net YTD' = TOTALYTD([Total Net Earnings], Calendar[Date])
+		lineageTag: b7736546-210e-4124-a49e-58c71d01619f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Last Year' = CALCULATE([Total Net Earnings], SAMEPERIODLASTYEAR(Calendar[Date]))
+		lineageTag: 87755148-75be-4d2b-aca1-51ef1ec3db50
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net YoY %' = DIVIDE([Total Net Earnings] - [Net Last Year], [Net Last Year])
+		formatString: 0.0
+		lineageTag: adbdc1a8-e57d-41c5-976a-7e432db9f475
+
 	column Value
 		isHidden
 		formatString: 0
